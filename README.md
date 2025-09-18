@@ -39,19 +39,13 @@ The system analyzes financial documents like Tesla's Q2 2025 financial update.
 ## Bugs Found & Fixes
 Bugs Found & Fixes
 
-| Bug # | Type       | Error Message / Location                                  | Fix Applied |
-|-------|------------|-----------------------------------------------------------|-------------|
-| 1     | Dependency | `ModuleNotFoundError: No module named 'fastapi'` (main.py, line 1) | Installed FastAPI using `pip install fastapi` and added it to `requirements.txt` |
-
- 2 | Dependency | `ModuleNotFoundError: No module named 'crewai'` (task.py, line 2) | Installed CrewAI using `pip install crewai` and added it to `requirements.txt` |
-
- 3 | Encoding / File Reading | UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte | with open("filename.txt", "r", encoding="utf-8", errors="ignore") as f:
-    data = f.read() |
-    Bug #	Type	Error Message	Fix Applied
-4|	Dependency| (corrupted package)	UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0 (main.py, line 6)	| Reinstalled crewai using pip install --upgrade --force-reinstall crewai. Updated requirements.txt.
-
-
-5|	Dependency |Missing	ModuleNotFoundError: No module named 'fastapi' (main.py, line 1)	| Installed fastapi, uvicorn, and python-multipart. Updated requirements.txt.
+Bugs Found & Fixes
+Bug #	Type	Error Message / Location	Fix Applied
+1	Dependency	ModuleNotFoundError: No module named 'fastapi' (main.py, line 1)	Installed FastAPI using pip install fastapi and added it to requirements.txt
+2	Dependency	ModuleNotFoundError: No module named 'crewai' (task.py, line 2)	Installed CrewAI using pip install crewai and added it to requirements.txt
+3	Encoding / File Reading	UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte	Used with open("filename.txt", "r", encoding="utf-8", errors="ignore") as f: data = f.read()
+4	Dependency / Corrupted Package	UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0 (main.py, line 6)	Reinstalled CrewAI using pip install --upgrade --force-reinstall crewai and updated requirements.txt
+5	Dependency	ModuleNotFoundError: No module named 'fastapi' (main.py, line 1)	Installed fastapi, uvicorn, and python-multipart. Updated requirements.txt
 
 
 6	Config / Encoding	| UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0 |  (agents.py, line 4)	.env file was not UTF-8. Recreated .env with correct UTF-8 encoding and proper variables.
